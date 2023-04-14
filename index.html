@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Weather App</title>
+  </head>
+
+  <body style="background-color: black;">
+<script src="index.js" type="text/jsx"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Type the name of the city</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="submit" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div id="root"></div>
+  <h2 style="
+  text-align: center;
+  color: aliceblue;">Weather Of <span id="cityName"></span></h2>
+      <div class="row" >
+        <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="images/clouds.jpg.jpg" alt="cloud">
+            <div class="card-body">
+            <ul>
+                <li>Cloud-Pct is <span id="cloud_pct"></span></li>
+                <li>Temperature is <span id="temp"></span></li>
+                <li>Feels_like <span id="feels_like"></span></li>
+                <li>Humidity is <span id="humidity"></span></li>
+                <li>Min_temperature is <span id="min_temp"></span></li>
+            <li>Max_temperature is <span id="max_temp"></span></li>
+            </ul>
+            
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="replaceFunction()">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card shadow-sm">
+        <img src="images/wind.jpg" alt="wind"> <div class="card-body">
+          <ul>
+            
+            <li>Wind_speed is <span id="wind_speed"></span></li>
+            <li>Wind_degrees is <span id="wind_degrees"></span></li>
+          </ul>
+          
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" id="viewwind" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card shadow-sm">
+      <img src="images/sun.jpg" alt="sun"><div class="card-body">
+        <ul>
+            <li>Sunrise at <span id="sunrise"></span></li>
+            <li>Sunset at <span id="sunset"></span></li>
+        </ul> <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          </div>
+          <small class="text-muted">9 mins</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <button type="submit" onclick="replaceFunction()">
+    Replace Function
+</button>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="index.js" charset="utf-8"></script>
+
+      </body>
+      </html>
